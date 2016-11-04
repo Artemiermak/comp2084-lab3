@@ -13,6 +13,7 @@ namespace Week6
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == false)
+
             {
 
                 if (!String.IsNullOrEmpty(Request.QueryString["StudentID"]))
