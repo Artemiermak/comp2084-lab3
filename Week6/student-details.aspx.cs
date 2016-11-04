@@ -12,7 +12,27 @@ namespace Week6
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack == false)
+            {
 
+                if (!String.IsNullOrEmpty(Request.QueryString["StudentID"]))
+                {
+                    Int32 StudentID = Convert.ToInt32(Request.QueryString["StudentID"]);
+
+
+                    var conn = new ContosoEntities();
+
+                    var objStud = (from s in conn.Students
+                                  where s.StudentID == StudentID
+                                  select s).FirstOrDefault();
+
+
+                    txtFirstMidName.Text = objStud.FirstMidName;
+                    txtLastName.Text = objStud.LastName.ToString();
+                    txtEnrollmentDate.Text = objStud.EnrollmentDate.ToString("yyyy-MM-dd");
+                    
+                }
+            }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)

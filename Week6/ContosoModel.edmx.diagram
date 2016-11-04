@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="3875ed6f5d9243ca8494c503f09d9629" Name="Diagram1">
         <EntityTypeShape EntityType="ContosoModel.Course" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ContosoModel.Department" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContosoModel.Department" Width="1.5" PointX="0.625" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ContosoModel.Enrollment" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ContosoModel.Student" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
         <AssociationConnector Association="ContosoModel.FK_Courses_DepartmentID" ManuallyRouted="false" />

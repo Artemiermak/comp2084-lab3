@@ -33,5 +33,32 @@ namespace Week6
             grdStudents.DataBind();
 
         }
+
+        protected void grdStudents_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            // 1.determine which row in the grid the user clicked
+            Int32 gridIndex = e.RowIndex;
+
+            // 2. find the DepartmentID value in the selected row
+            Int32 StudentID = Convert.ToInt32(grdStudents.DataKeys[gridIndex].Value);
+
+            // 3. connect to the db
+            var conn = new ContosoEntities();
+
+
+            // 4. delete the selected Department
+
+            Student s = new Student();
+            s.StudentID = StudentID;
+            conn.Students.Attach(s);
+
+
+
+            conn.Students.Remove(s);
+            conn.SaveChanges();
+
+            // 5. refresh the gridview --> call reload table content
+            getStudents();
+        }
     }
 }

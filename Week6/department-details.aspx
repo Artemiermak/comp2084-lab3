@@ -14,7 +14,6 @@
         <asp:TextBox 
             ID="txtBudget" 
             runat="server" 
-            Type="number"  
             required 
             min="0" max="99999999999" 
             step="1"/>
